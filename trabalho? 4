@@ -1,0 +1,258 @@
+-------------------index-----------------------------
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" >
+    <title>Dashboard</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="logo"></div>
+        <div class="left-navbar">
+          <ul class="menu-list">
+            <li class="menu-title">GERAL</li>
+            <li><a href="#">Dashboard</a></li>
+
+            <li class="menu-title">CLIENTES</li>
+            <li><a href="#">Cadastro de Clientes</a></li>
+
+            <li class="menu-title">Produtos</li>
+            <li><a href="#">Cadastro de Produtos</a></li>
+
+            <li class="menu-title">Pedidos</li>
+            <li><a href="#">Cadastro de pedoidos</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="conteudo">
+        <div class="top-navbar"></div>
+        <article>
+          <div class="artigo-titulo"></div>
+          <div class="artigo-conteudo">
+            <div class="texto"></div>
+            <section>
+              <h2>Introdução</h2>
+              <p>Texto...</p>
+            </section>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+----------------------styles-----------------------------
+/* Reset básico */
+
+:root{
+  --bg: #2c3e50;
+  --menu: #3f474e;
+  --bgconteudo: #F4F4F4;
+  --menuitem: #d1d5db;
+  --menuitemselecionado: #495057;
+  --artigo: #white;
+  --artigotitulo: #f4f6f9;
+  --artigoconteudo: rgb(215, 215, 215);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+}
+
+.container .menu {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .container .menu {
+    display: none;
+  }
+}
+
+.container .conteudo {
+  height: 100%;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.container .top-navbar {
+  height: 7%;
+  background-color: var(--menu);
+  border-radius: 10px;
+  margin: 5px 5px 5px 5px;
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+}
+
+.container .logo {
+  flex: 35;
+  background-image: url('./images/logo.png');
+  background-size: cover;
+  /*background-size: 100% 100%; Ajusta a imagem*/
+  background-repeat: no-repeat;
+  background-position: center;
+  /*Coloque essas configurações aqui*/
+  border-radius: 10px;
+  margin: 5px 5px 2.5px 5px;
+}
+
+.container .left-navbar {
+  flex: 65;
+  background-color: var(--menu);
+  border-radius: 10px;
+  margin: 5px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 15px;
+}
+
+.menu-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  opacity: 0.6;
+}
+
+.menu-list li a {
+  display: block;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  text-decoration: none;
+  color: var(--menuitem);
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.menu-list li a:hover {
+  background-color: var(--menuitemselecionado);
+}
+
+/*Artigo**/
+.container article {
+  background-color: var(--artigo);
+  border-radius: 10px;
+  margin: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+article > .artigo-titulo {
+  height: 5%;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--artigotitulo);
+}
+
+article .artigo-conteudo {
+  flex: 1;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--artigoconteudo);
+}
+
+article .texto {
+  height: 1000%;
+  background-color: black;
+}
+
+table{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td, th{
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd){
+  background-color: #dddddd;
+}
+
+
+-------------------------clientes listas-----------------------------
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" >
+    <title>Dashboard</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="logo"></div>
+        <div class="left-navbar">
+          <ul class="menu-list">
+            <li class="menu-title">GERAL</li>
+            <li><a href="#">Dashboard</a></li>
+
+            <li class="menu-title">CLIENTES</li>
+            <li><a href="#">Cadastro de Clientes</a></li>
+
+            <li class="menu-title">Produtos</li>
+            <li><a href="#">Cadastro de Produtos</a></li>
+
+            <li class="menu-title">Pedidos</li>
+            <li><a href="#">Cadastro de pedoidos</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="conteudo">
+        <div class="top-navbar"></div>
+        <article>
+          <div class="artigo-titulo"></div>
+          <div class="artigo-conteudo">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>alex</td>
+                    <td>casa 12</td>
+                </tr>
+            </table>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
