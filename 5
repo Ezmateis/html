@@ -1,0 +1,145 @@
+--------------------------index-----------------------------
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="form_dados">
+            <label for="txtnome">Nome</label>
+            <input id="txtnome" type="text"/>
+            
+            <br><br>
+
+            <label for="txtelefone">Telefone</label>
+            <input id="txtelefone" type="text"/>
+
+            <br><br>
+
+            <input type="submit" value="Enviar">
+
+        </form>
+
+        <table id="tb_dados">
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+            </tr>
+        </table>
+
+    </div>
+
+    <script  src="script.js" defer> </script>
+</body>
+</html>
+
+
+----------------------------styles---------------------------
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hiden;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+---------------------------script-------------------------------------
+const form = document.getElementById("form_dados");
+const txtNome = document.getElementById("txtnome");
+const txtTelefone = document.getElementById("txtelefone");
+const tabela = document.getElementById("tb_dados");
+
+form.addEventListener("submit", function (event){
+    event.preventDefault();
+
+    let nome = txtNome.value;
+    let telefone = txtTelefone.value;
+    adicionarItemNatabela(nome, telefone);
+
+    txtNome.value = "";
+    txtTelefone = "";
+
+});
+
+function adicionarItemNatabela(nome, telefone){
+    let novaLinha = tabela.insertRow();
+    let celNome = novaLinha.insertCell(0);
+    let celTelefone = novaLinha.insertCell(1);
+
+    celNome.textContent = nome;
+    celTelefone.textContent = telefone;
+}
