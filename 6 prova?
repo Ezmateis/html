@@ -1,0 +1,54 @@
+-------------------------html-----------------------------
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quadro">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia minus dolores rem minima illum eos ipsam pariatur, inventore nihil maxime magni repellat similique quis hic doloremque possimus facilis quaerat molestias?
+        </p>
+    </div>
+</body>
+</html>
+
+
+--------------------------styles-------------------------------
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vw;
+    background-color: aqua;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadro{
+    border: 1px solid black;
+    width: 600px;
+    height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("https://wallpapers.com/images/hd/windows-7-background-imfecqv6cnsicbx4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p{
+    padding: 35px;
+    text-align: justify;
+    font-size: 20px;
+}
